@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-
+//size of the array
 #define SIZE 10
 int search (int arr[SIZE], int target)
 {
@@ -8,12 +8,12 @@ int search (int arr[SIZE], int target)
   int end = SIZE - 1;
   bool found = false;
   int mid = 0;
+  //
   while(!found)
 	{
-
 	  mid = (start + end) / 2;
 	  
-	  if(arr[mid]==target)
+	  if(arr[mid] == target)
 		found = true;
 
 	  else if (arr[mid] > target)
@@ -21,26 +21,27 @@ int search (int arr[SIZE], int target)
 		
 	  else
 	      start = mid + 1;
-		
 	}
 	if (found)
 		return mid;
 	else
 		return -1;
-
 }
 
 int main()
 {
-int arr[SIZE];
-int key;
+	int arr[SIZE];
+	int key;
+	//take user input
 	printf("Please enter the values of the array ");
 	for(int i = 0; i < SIZE; i++)
-	  scanf("%d",&arr[i]);
+	  scanf("%d", &arr[i]);
+	
 	printf("Please enter the target number: ");
 	scanf("%d",&key);
-int l = search(arr, key);
-	printf("The index of the target number is %d",l);
+	
+	int l = search(arr, key);
+	printf("The index of the target number is %d", l);
 		
 return 0;
 }
